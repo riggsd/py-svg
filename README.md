@@ -5,9 +5,9 @@ A simple Python module for creating Scalable Vector Graphics (SVG).
 
 # About
 
-Just copy the `SVG` class out of [svg.py](svg.py), no need for dependencies, and you'll
-probably want to add or tweak the API as this only covers the bits of SVG that
-I happened to need.
+Just copy the [svg.py](svg.py) single file module, no need for dependencies,
+and you'll probably want to add or tweak the API as this only covers the bits
+of SVG that I happened to need.
 
 The API closely follows the SVG spec, so you'll want to follow along with the
 SVG Element Reference and SVG Attribute Reference documentation:
@@ -20,7 +20,9 @@ This is an example of using the Python API to generate a bass guitar tablature
 image [G_6_Em.svg](G_6_Em.svg):
 
 ```py
-svg = SVG(fill='white')
+from svg import SVG
+
+svg = SVG(width=700, height=500 fill='white')
 
 svg.style({
     'text': {
