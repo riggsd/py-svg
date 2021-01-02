@@ -118,6 +118,7 @@ class SVG:
         SubElement(self.parent, 'use', _normalize(attrs))
 
     def style(self, d:dict, **kwargs):
+        """Allows style sheets to be embedded directly within SVG content."""
         elem = SubElement(self.parent, 'style', _normalize(kwargs))
         def pretty(d, indent='  '):
             lines = []
@@ -172,4 +173,5 @@ class SVG:
             self._stack.pop()
 
     def __str__(self):
+        """Renders the SVG document to XML string."""
         return str(ElementTree.tostring(self._root, 'utf-8'), 'utf-8')
